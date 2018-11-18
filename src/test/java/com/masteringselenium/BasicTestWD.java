@@ -32,4 +32,34 @@ public class BasicTestWD extends DriverFactory {
     public void googleMilkExample() {
         googleExampleThatSearchesFor("Milk!");
     }
+
+    @Test
+    public void googleDoorExample() {
+        googleExampleThatSearchesFor("Door!");
+    }
+
+    @Test
+    public void googleGlassExample() {
+        googleExampleThatSearchesFor("Glass!");
+    }
+
+    @Test
+    public void googleWindowExample() {
+        googleExampleThatSearchesFor("Window!");
+    }
+
+    @Test
+    public void googleFloorExample() {
+        googleExampleThatSearchesFor("Floor!");
+    }
+
+    @Test
+    public void googleBulbExample() {
+        googleExampleThatSearchesFor("Bulb!");
+    }
+
+    @Test
+    public void googleNostalgiaExample() {
+        googleExampleThatSearchesFor("Nostalgia!");
+    }
 }
