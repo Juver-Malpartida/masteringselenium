@@ -13,6 +13,7 @@
     <selenium.version>3.141.59</selenium.version>
     <threads>1</threads>
     <browser>firefox</browser>
+    <overwrite.binaries>false</overwrite.binaries>
 </properties>
     <dependencies>
         <dependency>
@@ -49,6 +50,8 @@
                     <threadCount>${threads}</threadCount>
                     <systemProperties>
                         <browser>${browser}</browser>
+                        <webdriver.chrome.driver>${webdriver.chrome.driver}</webdriver.chrome.driver>
+                        <webdriver.gecko.driver>${webdriver.gecko.driver}</webdriver.gecko.driver>
                     </systemProperties>
                     <includes>
                         <include>**/*WD.java</include>
@@ -59,6 +62,27 @@
                         <goals>
                             <goal>integration-test</goal>
                             <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.lazerycode.selenium</groupId>
+                <artifactId>driver-binary-downloader-maven-plugin</artifactId>
+                <version>1.0.17</version>
+                <configuration>
+                    <rootStandaloneServerDirectory>${project.basedir}/src/test/resources/selenium_standalone_binaries
+                    </rootStandaloneServerDirectory>
+                    <downloadedZipFileDirectory>${project.basedir}/src/test/resources/selenium_standalone_zips
+                    </downloadedZipFileDirectory>
+                    <customRepositoryMap>${project.basedir}/src/test/resources/RepositoryMap.xml
+                    </customRepositoryMap>
+                    <overwriteFilesThatExist>${overwrite.binaries}</overwriteFilesThatExist>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>selenium</goal>
                         </goals>
                     </execution>
                 </executions>

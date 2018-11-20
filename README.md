@@ -2,10 +2,5 @@
 To execute the code use the following command:
 
 ```bash
-mvn clean install
--Dwebdriver.gecko.driver="D:\tools\drivers\binaries\geckodriver.exe"
--Dwebdriver.chrome.driver="D:\tools\drivers\binaries\chromedriver.exe"
--Dthreads=2
--Dbrowser=chrome
-
+mvn clean install -Dthreads=2 -Dbrowser=chrome
 ```
