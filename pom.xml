@@ -12,6 +12,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <selenium.version>3.141.59</selenium.version>
     <threads>1</threads>
+    <browser>firefox</browser>
 </properties>
     <dependencies>
         <dependency>
@@ -46,6 +47,9 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <threadCount>${threads}</threadCount>
+                    <systemProperties>
+                        <browser>${browser}</browser>
+                    </systemProperties>
                     <includes>
                         <include>**/*WD.java</include>
                     </includes>
